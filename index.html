@@ -15,22 +15,20 @@
                 background-size: 400% 400%;
                 height: 100vh;
                 margin: 0;
-                animation: gradientmove 15 linear infinite;
+                animation: gradientmove 10s linear infinite;
                 background-color: lightpink;
                 font-family: Arial;
                 text-align: center;
                 padding: 20px 10px 20px 10px;}
-        @keyframes gradientmove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
 
+        @keyframes shine {
+            0% {transform: scale(0.8); opacity: 0.5}
+            100% {transform: scale(1.3); opacity: 1;}
+            }
+        @keyframes gradientmove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         @keyframes floatandfade {
             from {
@@ -42,13 +40,41 @@
                 top: 0px;
             }
         }
+        .title-container::before {
+            content: "";
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            top: -10px;
+            left: 20%;
+            width: 12px;
+            height: 12px;
+            box-shadow: 0 0 10px white;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            animation: shine 2s linear infinite;
+        }
+        .title-container::after {
+            content: "";
+            position: absolute;
+            background-color: yellow;
+            border-radius: 50%;
+            bottom: -15px;
+            right: 15%;
+            width: 16px;
+            height: 16px;
+            box-shadow: 0 0 10px yellow;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            animation: shine 2s linear infinite;
+        }
         </style>
     </head>
 
     <body>
+        <img src="" alt="">
+        <div class="title-container" style="position: relative; display: inline-block;">
         <h1     style="
                 font-size: 100px;
-                font-weight: 1500;
+                font-weight: 900;
                 font-family: 'Playwrite GB J', cursive;
                 font-style: normal;
                 font-optical-sizing: auto;
@@ -56,8 +82,8 @@
                 position: relative;">
                 <span style="color: white;">Cat </span><span style="color: blue;">Hub</span>
         </h1>
-        <p      style="font-size: 20px;
-                color: black;"> nothing here 
+        </div>
+        <p style="font-size: 20px; color: black;"> nothing here 
         </p>
     </body>
 
