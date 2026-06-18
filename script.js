@@ -54,7 +54,7 @@ function animateParticles() {
         p.element.style.top = `${p.y}vh`;
         p.element.style.opacity = p.opacity;
 
-        // Recycle particle if it goes off-screen
+
         if (p.y < -5 || p.opacity <= 0) {
             p.element.remove();
             particles.splice(i, 1);

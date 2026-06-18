@@ -42,7 +42,7 @@ body
 {
     font-size: 100px;
     font-weight: 900;
-    font-family: 'Playwrite GB J', cursive; /* Fixed typo: Playwriyte -> Playwrite */
+    font-family: 'Playwrite GB J', cursive;
     animation: floatandfade 2s ease-in-out 1 forwards;
     position: relative;
 }
