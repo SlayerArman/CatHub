@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "s:\\Projects\\My Website\\index.html"
+            "file": "s:\\Projects\\VS Code Projects\\My Website\\index.html"
         }
     ]
 }

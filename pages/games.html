@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Clicker Adventure</title>
+    <style>
+        body { text-align: center; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; }
+        .game-view { margin: 20px; }
+        #game-box { margin: 50px auto; padding: 20px; background: white; border-radius: 15px; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        #cat-btn { font-size: 60px; background: none; border: none; cursor: pointer; transition: transform 0.1s; }
+        #cat-btn:active { transform: scale(0.9); }
+        .stat { font-size: 1.2em; margin: 10px 0; }
+        .upgrade-btn { padding: 10px; cursor: pointer; border: none; border-radius: 5px; }
+        .upgrade-btn:disabled { background-color: #ccc; cursor: not-allowed; }
+        .upgrade-btn:enabled { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <button onclick="showGame('cat-game')">Cat Clicker</button>
+        <button onclick="showGame('2nd-game')">Coming Soon</button>
+    </nav>
+
+    <div id="game-container">
+        <div id="cat-game" class="game-view">
+            <div id="game-box">
+                <h1>Cat Clicker</h1>
+                <div class="stat">Treats: <span id="treat-count">0</span></div>
+                <div class="stat">Per Second: <span id="cps">0</span></div>
+                <button id="cat-btn">🐱</button>
+                <br><br>
+                <button id="buy-feeder" class="upgrade-btn">Buy Auto-Feeder (Cost: 10)</button>
+            </div>
+        </div>
+
+        <div id="2nd-game" class="game-view" style="display:none;">
+            <h1>Coming Soon!</h1>
+            <p>Stay tuned for more cat-tastic games!</p>
+        </div>
+    </div>
+
+    <script>
+        // 1. Move function inside the script tags
+        function showGame(gameId) {
+            const games = document.querySelectorAll('.game-view');
+            games.forEach(game => {
+                game.style.display = 'none';
+            });
+            document.getElementById(gameId).style.display = 'block';
+        }
+
+        // 2. Game Logic
+        let state = {treats: 0, feeders: 0, cost: 10};
+
+        const saved = JSON.parse(localStorage.getItem('catGameSave'));
+        if (saved) state = saved;
+
+        function updateDisplay() {
+            document.getElementById('treat-count').innerText = Math.floor(state.treats);
+            document.getElementById('cps').innerText = (state.feeders * 1).toFixed(1);
+            
+            const btn = document.getElementById('buy-feeder');
+            btn.innerText = `Buy Auto-Feeder (Cost: ${state.cost})`;
+            btn.disabled = (state.treats < state.cost);
+            
+            localStorage.setItem('catGameSave', JSON.stringify(state));
+        }
+        
+        document.getElementById('cat-btn').addEventListener('click', () => {
+            state.treats++;
+            updateDisplay();
+        });
+
+        document.getElementById('buy-feeder').addEventListener('click', () => {
+            if (state.treats >= state.cost) {
+                state.treats -= state.cost;
+                state.feeders++;
+                state.cost = Math.floor(state.cost * 1.5);
+                updateDisplay();
+            }
+        });
+
+        setInterval(() => {
+            state.treats += (state.feeders * 0.1);
+            updateDisplay();
+        }, 100);
+
+        updateDisplay();
+    </script>
+</body>
+</html>
