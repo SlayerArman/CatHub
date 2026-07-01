@@ -2,26 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name=""viewport content=""width=device-width, initial-scale="1.0">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>CatHub Games</title>
         <style>
             :root
             {
-                --bg-color: #f7f9fc;
-                --card-bg: #ffffff;
-                --primary: #ff9f43;
-                --text: #2d3436;
-                --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+                --bg-color: #050505; /* Deep black base */
+                --card-bg: rgba(25, 25, 25, 0.85); /* Slightly translucent dark cards */
+                --primary: #ff7eb3; /* Smooth pinkish primary */
+                --text: #f0f0f0; /* Off-white text for readability */
+                --shadow: 0 8px 32px rgba(255, 126, 179, 0.15); /* Soft pinkish glow */
             }
 
             body
             {
                 text-align: center;
                 font-family: 'Segoe UI', system-ui, sans-serif;
-                background-color: var(--bg-color);
                 color: var(--text);
                 margin: 0;
                 padding: 20px;
+                min-height: 100vh;
+                
+                background: linear-gradient(-45deg, #000000, #2a0818, #1a000b, #000000);
+                background-size: 400% 400%;
+                animation: gradientBG 15s ease infinite;
+            }
+
+            @keyframes gradientBG {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
             }
 
             h1{margin-bottom: 10px; color: var(--text);}
@@ -47,7 +57,7 @@
                 cursor: pointer;
                 transition: all 0.2s ease;
                 background: transparent;
-                color: #7f8c8d;
+                color: #888888; /* Changed to lighter grey for dark mode */
             }
 
             nav button.active
@@ -78,7 +88,7 @@
             @keyframes fadeIn
             {
                 from{opacity: 0; transform: translateY(10px);}
-                to{opacity: 1; transform: traslateY(0);}
+                to{opacity: 1; transform: translateY(0);}
             }
 
             /*Cat Clicker*/
@@ -98,7 +108,14 @@
             #cat-btn:active{transform: scale(0.85);}
 
             .stat-container{display: flex; gap: 20px; margin-bottom: 20px;}
-            .stat{font-size: 1.2rem; background: #f8f9fa; padding: 10px 20px; border-radius: 10px; font-weight: bold;}
+            .stat
+            {
+                font-size: 1.2rem; 
+                background: #1a1a1a; /* Changed to dark grey */
+                padding: 10px 20px; 
+                border-radius: 10px; 
+                font-weight: bold;
+            }
             .stat span{color: var(--primary);}
 
             .upgrade-btn
@@ -112,8 +129,18 @@
                 transition: all 0.2s;
             }
 
-            .upgrade-btn:disabled{background-color: #dee2e6; color: #adb5bd; cursor: not-allowed;}
-            .upgrade-btn:enabled{background-color: #2ed573; color: white; box-shadow: 0 4px 12px rgba(46, 213, 115, 0.2);}
+            .upgrade-btn:disabled
+            {
+                    background-color: #2a2a2a; /* Darker disabled background */
+                    color: #555555; /* Darker disabled text */
+                    cursor: not-allowed;
+            }
+            .upgrade-btn:enabled
+            {
+                background-color: #2ed573;
+                color: white;
+                box-shadow: 0 4px 12px rgba(46, 213, 115, 0.2);
+            }
 
             /*Cat Memory Match*/
             .grid-container
@@ -136,7 +163,7 @@
             {
                 width: 80px;
                 height: 80px;
-                background: #dfe4ea;
+                background: #222222;
                 border-radius: 10px;
                 display: flex;
                 align-items: center;
@@ -145,10 +172,14 @@
                 cursor: pointer;
                 user-select: none;
                 transition: all 0.2s ease;
-                box-shadow: 0 4pc 6px rgba(0, 0, 0, 0.05);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             }
 
-            .cardflipped{background: #ffeaa7; transform: rotateY(180deg);}
+            .card.flipped
+            {
+                background: var(--primary);
+                transform: rotateY(180deg);
+            }
             .card.matched{background: #2ed573; color: white; cursor: default; transform: scale(0.95); opacity: 0.7;}
 
             #memory-msg{font-size: 1.2rem; font-weight: bold; color: #2ed573; height: 24px;}
@@ -167,27 +198,32 @@
             <div id="cat-clicker" class="game-view active">
                 <div class="clicker-box">
                     <h2>Cat Clicker</h2>
-                    <div class="start-container">
-                        <div class="start">Treats: <span id="treat-count">0</span></div>
+                    <div class="stat-container">
+                        <div class="stat">Treats: <span id="treat-count">0</span></div>
                         <div class="stat">Per Sec: <span id="cps">0.0</span></div>
                     </div>
                     <button id="cat-btn">🐱</button>
-                    <button id="buy-feeder" class="uprade-btn">Buy Auto-Feeder (Cost: 10)</button>
+                    <button id="buy-feeder" class="upgrade-btn">Buy Auto-Feeder (Cost: 10)</button>
                 </div>
             </div>
             
             <div id="cat-memory" class="game-view">
-                <div class="grid-container">
-                    <h2>Cat Memory Match</h2>
-                    <div id="memory-msg"></div>
+    <div class="grid-container">
+        <h2>Cat Memory Match</h2>
+        <div class="stat-container">
+            <div class="stat">Time: <span id="memory-timer">0</span>s</div>
+            <div class="stat">Best Time: <span id="memory-best">--</span>s</div>
+        </div>
+        <div id="memory-msg"></div>
                     <div id="memory-grid" class="memory-grid"></div>
-                    <button onclick="initMemoryGame()" class="uprade-btn" style="background-color: var(--primary); color: white;">Restart Game</button>
+                    <button onclick="initMemoryGame()" class="upgrade-btn" style="background-color: var(--primary); color: white;">Restart Game</button>
                 </div>
             </div>
         </div>
 
         <script>
             let clickerInterval = null;
+            let memoryTimerInterval = null;
 
             function switchGame(gameId)
             {
@@ -198,6 +234,12 @@
             {
                 clearInterval(clickerInterval);
                 clickerInterval = null;
+            }
+
+            if (gameId !== 'cat-memory' && memoryTimerInterval)
+            {
+                clearInterval(memoryTimerInterval);
+                memoryTimerInterval = null;
             }
 
             document.getElementById(gameId).classList.add('active');
@@ -231,8 +273,138 @@
 
             function updateClickerDisplay()
             {
-                document.getElemntById('treat-count')
+                document.getElementById('treat-count').innerText = Math.floor(clickerState.treats);
+                document.getElementById('cps').innerText = (clickerState.feeders * 1).toFixed(1);
+
+                const btn = document.getElementById('buy-feeder');
+                btn.innerText = `Buy Auto-Feeder (Cost: ${clickerState.cost})`;
+                btn.disabled = (clickerState.treats < clickerState.cost);
+
+                localStorage.setItem('catGameSave', JSON.stringify(clickerState));
             }
+
+            document.getElementById('cat-btn').addEventListener('click', () => {
+                clickerState.treats++;
+                updateClickerDisplay();
+            });
+
+            //Cat Memory Match Logic
+            let hasFlippedCard = false;
+            let lockBoard = false;
+            let firstCard, secondCard;
+            let matchedPairs = 0;
+            let memorySecondsElapsed = 0;
+
+            const catEmojis = ['🐱', '😻', '😸', '🙀', '😽', '😹', '😾', '🦁'];
+
+            let memoryCards = [...catEmojis, ...catEmojis];
+
+            function initMemoryGame()
+            {
+                const grid = document.getElementById('memory-grid');
+                const msg = document.getElementById('memory-msg');
+                grid.innerHTML = '';
+                msg.innerText = '';
+                matchedPairs = 0;
+                resetBoardState();
+
+                if (memoryTimerInterval) clearInterval(memoryTimerInterval);
+                memorySecondsElapsed = 0;
+                document.getElementById('memory-timer').innerText = memorySecondsElapsed;
+
+                const savedBest = localStorage.getItem('catMemoryBestTime');
+                document.getElementById('memory-best').innerText = savedBest ? savedBest : '--';
+
+                memoryTimerInterval = setInterval(() => {
+                    memorySecondsElapsed++;
+                    document.getElementById('memory-timer').innerText = memorySecondsElapsed;
+                }, 1000);
+
+    memoryCards.sort(() => Math.random() - 0.5);
+
+                memoryCards.forEach((emoji, index) => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.dataset.emoji = emoji;
+                    card.dataset.index = index;
+                    card.innerText = '🐾';
+                    card.addEventListener('click', flipCard);
+                    grid.appendChild(card);
+                });
+            }
+
+            function flipCard()
+            {
+                if (lockBoard) return;
+                if (this === firstCard) return;
+
+                this.classList.add('flipped');
+                this.innerText = this.dataset.emoji;
+
+                if (!hasFlippedCard)
+            {
+                hasFlippedCard = true;
+                firstCard = this;
+                return;
+            }
+
+            secondCard = this;
+            checkForMatch();
+            }
+
+            function checkForMatch()
+            {
+                let isMatch = firstCard.dataset.emoji === secondCard.dataset.emoji;
+                isMatch ? disableCards() : unflipCards();
+            }
+
+            function disableCards()
+                {
+                    firstCard.classList.add('matched');
+                    secondCard.classList.add('matched');
+                    matchedPairs++;
+
+                   if(matchedPairs === catEmojis.length)
+                    {   clearInterval(memoryTimerInterval);
+                        document.getElementById('memory-msg').innerText = `🎉 You found all the cats in ${memorySecondsElapsed}s! Meow-velous!`;
+                        
+                        const savedBest = localStorage.getItem('catMemoryBestTime');
+                        if (!savedBest || memorySecondsElapsed < parseInt(savedBest)) {
+                            localStorage.setItem('catMemoryBestTime', memorySecondsElapsed);
+                            document.getElementById('memory-best').innerText = memorySecondsElapsed;
+                            document.getElementById('memory-msg').innerText += " 🏆 New Best Time!";
+                        }
+                    }
+                    resetBoardState();
+                }
+
+                function unflipCards()
+                {
+                    lockBoard = true;
+                    setTimeout(() => {
+                        firstCard.classList.remove('flipped');
+                        secondCard.classList.remove('flipped');
+                        firstCard.innerText = '🐾';
+                        secondCard.innerText = '🐾';
+                        resetBoardState();
+                    }, 1000);
+                }
+
+                function resetBoardState()
+                {
+                    [hasFlippedCard, lockBoard] = [false, false];
+                    [firstCard, secondCard] = [null, null];
+                }
+
+                document.getElementById('buy-feeder').addEventListener('click', () => {
+    if (clickerState.treats >= clickerState.cost) {
+        clickerState.treats -= clickerState.cost;
+        clickerState.feeders++;
+        clickerState.cost = Math.floor(clickerState.cost * 1.5);
+        updateClickerDisplay();
+    }
+});
+                initClickerGame();
         </script>
     </body>
 </html>
