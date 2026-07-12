@@ -1,5 +1,6 @@
 body 
 {
+    cursor: url("assets/cursor.png")16 16, auto;
     background: linear-gradient(-45deg, #fd0000, #ff0059, #a200ff, #ff00d9);
     background-size: 400% 400%;
     min-height: 100vh;
@@ -9,6 +10,27 @@ body
     text-align: center;
     padding: 0px 0px;
     color: white;
+}
+
+.my-button:hover {cursor: url("assets/paw.png")16 16, pointer;}
+
+#cursor
+{
+    box-shadow:
+    0 0 5px #ff4fa0,
+    0 0 15px #ff4fa0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.08);
+    z-index: 9999;
 }
 
 .navbar

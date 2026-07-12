@@ -6,6 +6,32 @@ for (let i = 0; i < particleCount; i++) {
     createParticle(true);
 }
 
+const cursor = document.getElementById("cursor");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+
+    cursor.style.left = currentX + "px";
+    cursor.style.top = currentY + "px";
+
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
 function createParticle(isInitialLoad = false) {
     const particle = document.createElement('div');
     particle.classList.add('particle');

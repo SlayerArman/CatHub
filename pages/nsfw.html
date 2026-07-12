@@ -4,4 +4,61 @@
     <head>
     <h1>What You are Doing Here! (Silly)</h1>
     </head>
+    <div id="cursor"></div>
 </html>
+
+<style>
+    body
+    {
+        cursor: url("assets/cursor.png")16 16, auto;
+    }
+    
+    .my-button:hover {cursor: url("assets/paw.png")16 16, pointer;}
+
+    #cursor
+{
+    box-shadow:
+    0 0 5px #ff4fa0,
+    0 0 15px #ff4fa0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.08);
+    z-index: 9999;
+}
+</style>
+
+<script>
+    const cursor = document.getElementById("cursor");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+
+    cursor.style.left = currentX + "px";
+    cursor.style.top = currentY + "px";
+
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+</script>
