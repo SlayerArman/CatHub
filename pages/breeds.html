@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lag="em">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Cat Breeds</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600; 700&family=Poppins:wght@300; 400; 500; 600&display=swap" rel="stylesheet">
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html
+            {
+                scroll-behavior: smooth;
+            }
+
+            body
+            {
+                background: #fff8f0;
+                font-family:'Poppins' ,sans-serif;
+                overflow-x: hidden;
+            }
+
+            .hero
+            {
+                min-width: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding: 40px;
+            }
+
+            .hero-h1
+            {
+                font-size: 5rem;
+                font-family: 'Playfair Display', serif;
+                color: #2f2f2f;
+                margin-bottom: 20px;
+            }
+
+            .hero p
+            {
+                font-size: 1.2rem;
+                color: #666;
+                max-width: 700px;
+            }
+
+            .scroll-text
+            {
+                margin-top: 50px;
+                font-size:1rem;
+                color:#999;
+                animation:bounce 2s infinite;
+            }
+            @keyframes bounce{
+                 0%,100%{
+                    transform:translateY(0);
+                 }
+                 50%{
+                    transform:tranlateY(12px);
+                 }
+
+            }
+
+            .container{
+                width:90%;
+                max-width:1300px;
+                margin:auto;
+            }
+
+            .breed{
+                display:flex;
+                align-items:center;
+                gap:70px;
+                margin:120px 0;
+                opacity:0;
+                transform:translateY(80px);
+                transition:1s ease;
+            }
+            .breed.show{
+                opacity:1;
+                transform:translateY(0);
+            }
+            .breed.reverse{
+                flex-direction:row-reverse;
+            }
+            .image-box{
+                flex:1;
+            }
+            .image-box img{
+                width:100%;
+                border-radius:30px;
+                box-shadow:0 15px 35px rgba(0,0,0,.15);
+                transition:.4s;
+            }
+            .content{
+                flex:1;
+            }
+            .tag{
+                display:inline-block;
+                background:white;
+                padding:8px 16px;
+                border-radius:50px;
+                margin-bottom:20px;
+                font-size:9rem;
+                box-shadow:0 5px 15px rgba(0,0,0,.08);
+            }
+            .contenth2{
+                font-size:3rem;
+                color:#222;
+                margin-bottom:20px;
+                font-family:'PLayfair Display',serif;
+            }
+            .content p{
+                line-height:1.9;
+                color:#555;
+                font-size:1.05rem;
+            }
+
+            .footer{
+                text-align:center;
+                padding:120px 30px;
+            }
+            .footer h2{
+                font-family:'Playfair Display',serif;
+                font-size:3rem;
+                margin-bottom:20px;
+            }
+            .footer p{
+                color:#666;
+            }
+
+            @media(max-width:900px){
+
+                .breed,
+                .breed.reverse{
+                    flex-direction:column;
+                }
+                .hero h1{
+                    font-size:3rem;
+                }
+                .content h2{
+                    font-size:2.2rem;
+                }
+                
+            }
+        </style>
+    </head>
+    <body>
+
+        <section class="hero">
+            <h1>Cat breeds</h1><h1>
+             <p>
+                Explore some of the world's most beautiful,
+                intelligent and fascinating cat breeds.
+                From fluffy giants to sleek athletes,
+                every breed has its own unique charm.
+             </p>
+             
+             <div class="scroll-text">
+                 ↓ Scroll Down ↓
+             </div>
+        </section>
+
+        <div class="container">
+
+            <!--1-->
+
+                <section class="breed">
+                    <div class="image-box">
+                        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=1200" alt="">
+                    </div>
+
+                    <div class="content">
+                        <div class="tag">★★★★★ Most Popular</div>
+                        <h2>Maine Coon</h2>
+                        <p>
+                            Known as the gentle giant of the cat world,
+                            Maine Coons are famous for their large size,
+                            thick fur and affectionate personalities.
+                            They are intelligent, playful and excellent
+                            companions for families.
+                        </p>
+                    </div>
+                </section>
+
+                <!--2-->
+
+                <section class="breed reverse">
+                    <div class="image-box">
+                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=1200" alt="">
+                    </div>
+
+                    <div class="content">
+                        <div class="tag">Elegant Breed</div>
+                        <h2>Siamese</h2>
+                        <p>
+                            Siamese cats are instantly recognizable
+                            thanks to their striking blue eyes and
+                            sleek appearance. They are extemely
+                            social, vocal and love interacting
+                            with their owners.
+                        </p>
+                    </div>
+                </section>
+
+                <!--3-->
+
+                <section class="breed">
+                    <div class="image-box">
+                        <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?w=1200" alt="">
+                    </div>
+
+                    <div class="content">
+                        <div class="tag">Luxury Cat</div>
+                        <h2>Persian</h2>
+                    </p>
+                        Persian cats are admired for their long,
+                        flowing coats and calm personalities.
+                        They enjoy relaxed environments and are
+                        among the most iconic cat breeds in the world.
+                </p>
+                </div>
+            </section>
+            <!--4-->
+
+            <section class="breed reverse">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=1200" alt="">
+                </div>
+
+                <div class="content">
+                    <div class="tag">Wild Appearance</div>
+                    <h2>Bengal</h2>
+                    <p>
+                        Bengals have beautiful spotted coats
+                        resembling wild cats. They are energetic,
+                        intelligent and thrive in homes that
+                        provide plents of activity and stimulation. 
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5 -->
+
+            
+        </div>
+    </body>
+</html> 
