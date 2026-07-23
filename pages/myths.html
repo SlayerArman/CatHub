@@ -13,28 +13,6 @@
                 background: #fd94c3;
                 color: #111827;
             }
-            body {
-                cursor: url("cursor.png") 16 16, auto;
-            }
-
-            #cursor
-            {
-                box-shadow:
-                0 0 5px #ff4fa0,
-                0 0 15px #ff4fa0;
-                width: 15px;
-                height: 15px;
-                border: 2px solid rgba(255,255,255,0.7);
-                border-radius: 50%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                pointer-events: none;
-                transform: translate(-50%, -50%);
-                backdrop-filter: blur(3px);
-                background: rgba(255,255,255,0.08);
-                z-index: 9999;
-            }
 
         </style>
     </head>
@@ -192,47 +170,8 @@
                 typeBadge.className = "px-4 py-2 rounded-full text-base font-bold bg-gray-200 text-gray-700";
                 return;
              }
-
-             const cursor = document.getElementById("cursor");
-
-            let mouseX = 0;
-            let mouseY = 0;
-
-            let currentX = 0;
-            let currentY = 0;
-
-            document.addEventListener("mousemove", (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            function animateCursor() {
-
-                currentX += (mouseX - currentX) * 0.1;
-                currentY += (mouseY - currentY) * 0.1;
-
-                cursor.style.left = currentX + "px";
-                cursor.style.top = currentY + "px";
-
-                requestAnimationFrame(animateCursor);
-            }
-
-            animateCursor();
-
-             const randomIndex = Math.floor(Math.random() * catStatements.length);
-             const item = catStatements[randomIndex];
-
-             statementText.textContent = item.text;
-
-             if (item.type.toLowerCase() === "fact")
-             {
-                typeBadge.textContent = "FACT";
-                typeBadge.className = "px-4 py-2 rounded-full text-base font-bold bg-emerald-100 text-emerald-800 border border-emerald-200";
-             } else {
-                typeBadge.textContent = "MYTH";
-                typeBadge.className = "px-4 py-2 rounded-full text-base font-base font-bold bg-violet-100 text-violet-800 border border-violet-200";
-             }
-            }
+            
+        }
 
             generateBtn.addEventListener("click", showRandomStatement);
 
