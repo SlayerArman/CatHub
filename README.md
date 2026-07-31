@@ -6,6 +6,7 @@ I built this website for cat lovers. I noticed that hackclubers love cats and ma
 
 ## Visit Website
 The website is currently hosted on GitHub Pages.
+https://slayerarman.github.io/CatHub/
 
 
 ## Screenshot
