@@ -37,5 +37,5 @@ The following screenshots are the working previews of the website.
 ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
 ![VS CODE](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge\&logo=visualstudiocode\&logoColor=white)
 
-### AI Usgae Decleration
+### AI Usage Decleration
 I used AI in this project for assistance and some error fixing. AI was used for breeds and myths & facts section just for the text information. I took help of AI in the games section for guidance.
