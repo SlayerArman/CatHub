@@ -4,12 +4,14 @@
 
 I built this website for cat lovers. I noticed that hackclubers love cats and many of them have cat pfps(even me). I have added my interesting and enjoyful features and elements.
 
+## Disclaimer: ⚠️Vist NSFW page on your own Risk⚠️
+
 ## Visit Website
 The website is currently hosted on GitHub Pages.
 https://slayerarman.github.io/CatHub/
 
 
-## Screenshot
+## Screenshots
 The following screenshots are the working previews of the website.
 
 <img width="943" height="409" alt="Screenshot 2026-07-31 083625" src="https://github.com/user-attachments/assets/9e75796c-492e-4223-b8c6-78f434e99839" />
@@ -34,5 +36,3 @@ The following screenshots are the working previews of the website.
 ![CSS 3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
 ![VS CODE](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge\&logo=visualstudiocode\&logoColor=white)
-
-
