@@ -35,7 +35,7 @@
                   </span>
                 </div>
                 
-                <div class="border bprder-rose-100 bg-rose-50 p-6 rounded-xl text-center min-h-[120px] md:min-h-[160px] flex items-center justify-center shadow-inner">
+                <div class="border border-rose-100 bg-rose-50 p-6 rounded-xl text-center min-h-[120px] md:min-h-[160px] flex items-center justify-center shadow-inner">
                     <p id="statementText" class="text-xl md:text-2xl font-medium text-gray-800">
                         Click the button below to get a random cat myth or fact 🐾
                     </p>
@@ -165,12 +165,26 @@
             {
              if (catStatements.length === 0)
              {
-                statementText.textContent = "No myths or facts added yet. Please edit y=the code.";
+                statementText.textContent = "No myths or facts added yet. Please edit the code.";
                 typeBadge.textContent = "No Data";
                 typeBadge.className = "px-4 py-2 rounded-full text-base font-bold bg-gray-200 text-gray-700";
                 return;
              }
-            
+
+             const randomIndex = Math.floor(Math.random() * catStatements.length);
+            const statement = catStatements[randomIndex];
+
+            statementText.textContent = statement.text;
+
+            if (statement.type === "fact") {
+                typeBadge.textContent = "FACT";
+                typeBadge.className =
+                    "px-4 py-2 rounded-full text-base font-bold bg-emerald-200 text-emerald-800";
+            } else {
+                typeBadge.textContent = "MYTH";
+                typeBadge.className =
+                    "px-4 py-2 rounded-full text-base font-bold bg-violet-200 text-violet-800";
+            }
         }
 
             generateBtn.addEventListener("click", showRandomStatement);

@@ -51,7 +51,6 @@
             {
                 font-size: 1.2rem;
                 color: #666;
-                max-width: 700px;
             }
 
             .scroll-text
@@ -71,13 +70,8 @@
 
             }
 
-            .container{
-                width:90%;
-                max-width:1300px;
-                margin:auto;
-            }
-
-            .breed{
+            .breed
+            {
                 display:flex;
                 align-items:center;
                 gap:70px;
@@ -86,57 +80,78 @@
                 transform:translateY(80px);
                 transition:1s ease;
             }
-            .breed.show{
+            .breed.show
+            {
                 opacity:1;
                 transform:translateY(0);
             }
-            .breed.reverse{
+
+            .breed.reverse
+            {
                 flex-direction:row-reverse;
             }
-            .image-box{
+
+            .image-box
+            {
                 flex:1;
             }
-            .image-box img{
+
+            .image-box img
+            {
                 width:100%;
                 border-radius:30px;
                 box-shadow:0 15px 35px rgba(0,0,0,.15);
                 transition:.4s;
             }
-            .content{
+
+            .content
+            {
                 flex:1;
             }
-            .tag{
-                display:inline-block;
-                background:white;
-                padding:8px 16px;
-                border-radius:50px;
+
+            .tag
+            {
                 margin-bottom:20px;
-                font-size:9rem;
-                box-shadow:0 5px 15px rgba(0,0,0,.08);
+                font-size:5rem;
+                font-weight: 800;
             }
-            .contenth2{
+
+            .contenth2
+            {
                 font-size:3rem;
                 color:#222;
                 margin-bottom:20px;
                 font-family:'PLayfair Display',serif;
             }
-            .content p{
+
+            .content p
+            {
                 line-height:1.9;
                 color:#555;
                 font-size:1.05rem;
             }
 
-            .footer{
+            .footer
+            {
                 text-align:center;
                 padding:120px 30px;
             }
-            .footer h2{
+
+            .footer h2
+            {
                 font-family:'Playfair Display',serif;
                 font-size:3rem;
                 margin-bottom:20px;
             }
-            .footer p{
+
+            .footer p
+            {
                 color:#666;
+            }
+
+            .padding
+            {
+                padding-left: 20px;
             }
 
             @media(max-width:900px){
@@ -158,8 +173,8 @@
     <body>
 
         <section class="hero">
-            <h1>Cat breeds</h1><h1>
-             <p>
+            <h1 style="font-size: 5rem; font-weight: 1000; font-style: oblique;">Cat breeds</h1>
+             <p style="padding-left: 100px; padding-right: 100px;">
                 Explore some of the world's most beautiful,
                 intelligent and fascinating cat breeds.
                 From fluffy giants to sleek athletes,
@@ -177,12 +192,12 @@
 
                 <section class="breed">
                     <div class="image-box">
-                        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=1200" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvw1RDo8vYJA0_JRknCwxfxz9kArFz9KAR4sDIS84Ng&s=10" alt="">
                     </div>
 
                     <div class="content">
-                        <div class="tag">★★★★★ Most Popular</div>
-                        <h2>Maine Coon</h2>
+                        <div class="tag">Maine Coon</div>
+                        <h2>Most Popular</h2>
                         <p>
                             Known as the gentle giant of the cat world,
                             Maine Coons are famous for their large size,
@@ -197,13 +212,13 @@
 
                 <section class="breed reverse">
                     <div class="image-box">
-                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=1200" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1RMAtVwtavi9waXGAUtal3XrNFn6PkO7J2YJfz2EK7A&s=10" alt="">
                     </div>
 
                     <div class="content">
-                        <div class="tag">Elegant Breed</div>
-                        <h2>Siamese</h2>
-                        <p>
+                        <div class="tag">Siamese</div>
+                        <h2 class="padding">Elegant Breed</h2>
+                        <p class="padding">
                             Siamese cats are instantly recognizable
                             thanks to their striking blue eyes and
                             sleek appearance. They are extemely
@@ -217,12 +232,12 @@
 
                 <section class="breed">
                     <div class="image-box">
-                        <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?w=1200" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC6dli1c-KLHZ3GyXbnXn9sJZtTDHz2qlltoMSR6eMGg&s=10" alt="">
                     </div>
 
                     <div class="content">
-                        <div class="tag">Luxury Cat</div>
-                        <h2>Persian</h2>
+                        <div class="tag">Persian</div>
+                        <h2>Luxury Cat</h2>
                     </p>
                         Persian cats are admired for their long,
                         flowing coats and calm personalities.
@@ -235,13 +250,13 @@
 
             <section class="breed reverse">
                 <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=1200" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5vyVXGTN2TfCrESdvNmJtZZb9zMvgRtiaOCVIwtN42g&s=10" alt="">
                 </div>
 
                 <div class="content">
-                    <div class="tag">Wild Appearance</div>
-                    <h2>Bengal</h2>
-                    <p>
+                    <div class="tag">Bengal</div>
+                    <h2 class="padding">Wild Appearance</h2>
+                    <p class="padding">
                         Bengals have beautiful spotted coats
                         resembling wild cats. They are energetic,
                         intelligent and thrive in homes that
@@ -254,12 +269,12 @@
 
             <section class="breed">
                 <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=1200" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyORVwjbmez2htVTY4z3uzP2qq5HVN_qD92Cpr4YUJcw&s=10" alt="">
                 </div>
 
                 <div class="content">
-                    <div class="tag">Pamily Friendly</div>
-                    <h2>Ragdoll</h2>
+                    <div class="tag">Ragdoll</div>
+                    <h2>Family Friendly</h2>
                     <p>
                         Ragdolls are gentle, affectionate and
                         often go limp picked up, which is
@@ -273,13 +288,13 @@
 
             <section class="breed reverse">
                 <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=1200" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPHyhxvQ8Wuae3b8WEgrzq5PLTgls3shRqprJiHfjOwA&s=10" alt="">
                 </div>
 
                 <div class="content">
-                    <div class="tag">Classic Favorites</div>
-                    <h2>British Shorthair</h2>
-                    <p>
+                    <div class="tag">British Shorthair</div>
+                    <h2 class="padding">Classic Favorites</h2>
+                    <p class="padding">
                         Famous for their round faces and plush
                         coats, British Shorthairs are calm,
                         independent and incredibly charming.
@@ -291,12 +306,12 @@
           
          <section class="breed">
             <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=1200" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL8-bXeFp9f7IEb2b6PT3oEucQk5DjPeiKDUlmTfaN5A&s=10" alt="">
             </div>
 
             <div class="content">
-                <div class="tag">Unique Ears</div>
-                <h2>Scottish Fold</h2>
+                <div class="tag">Scottish Fold</div>
+                <h2>Unique Ears</h2>
                 <p>
                     Their folded ears give them a sweet,
                     owl-like appearance. Scottish Folds
@@ -310,13 +325,13 @@
 
          <section class="breed reverse">
             <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=1200" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0vudXKORtUz_UJ_r9zlea03CO1o7Q0fcoyTQYdLRu5Q&s=10" alt="">
             </div>
 
             <div class="content">
-                <div class="tag">Hairless Wonder</div>
-                <h2>Sphynx</h2>
-                <p>
+                <div class="tag">Sphynx</div>
+                <h2 class="padding">Hairless Wonder</h2>
+                <p class="padding">
                     Despite their lack of fur, Sphynx cats
                     are warm, enrgetic and highly social.
                     They crave attention and enjoy being
@@ -329,12 +344,12 @@
 
          <section class="breed">
             <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=1200" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB84H41NTJFesMQ6ASHeYy78OEB9JlFAkEUc1Ox_gsnA&s=10" alt="">
             </div>
 
             <div class="content">
-                <div class="tag">Highly Intelligent</div>
-                <h2>Russian Blue</h2>
+                <div class="tag">Russian Blue</div>
+                <h2>Highly Intelligent</h2>
                 <p>
                     Russian Blues are known for their
                     shimmering silver-blue coats and
@@ -346,7 +361,254 @@
 
          <!-- 10 -->
 
+        <section class="breed reverse">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6RJxVMerz6RYi7FBk_7iDEg45ubP1orEhx4kdtA8bQ&s=10" alt="">
+            </div>
 
+            <div class="content">
+                <div class="tag">Norwegian Forest Cat</div>
+                <h2 class="padding">Ancient Breed</h2>
+                <p class="padding">
+                    Built for cold climates, Norwegian
+                    Forest Cats have thick coats and
+                    strong bodies. They are adventurous,
+                    friendly and excellent climbers.
+                </p>
+            </div>
+        </section>
+
+        <!-- 11 -->
+
+        <section class="breed">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX_y9qJQRDgmNKCBvJga70k84zCdcpLTXTbBXzOmEQvA&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">American Shorthair</div>
+                <h2>Playful</h2>
+                <p>
+                    American Shorthairs are adaptable,
+                    affectionate and easy-going cats.
+                    They are healthy, playful and make
+                    wonderful companions for families
+                    and first-time cat owners.
+                </p>
+            </div>
+        </section>
+
+        <!-- 12 -->
+
+        <section class="breed reverse">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL1tX3fBNq0F2VCqW6Trpe6AYKEXT2YpJj2wna9AccYg&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Abyssinian</div>
+                <h2 class="padding">Ancient Breed</h2>
+                <p class="padding">
+                    Abyssinians are one of the oldest
+                    cat breeds. Curious and energetic,
+                    they enjoy climbing, exploring and
+                    staying involved in everything
+                    happening around them.
+                </p>
+            </div>
+        </section>
+
+        <!-- 13 -->
+
+        <section class="breed">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT40vbW7a-qBEArJac-qQZxkef1l8okgbvEqTkkbFytg&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Birman</div>
+                <h2>Gentle Soul</h2>
+                <p>
+                    Birmans are affectionate cats with
+                    silky coats and striking blue eyes.
+                    Their calm temperament makes them
+                    ideal indoor companions.
+                </p>
+            </div>
+        </section>
+
+        <!-- 14 -->
+
+        <section class="breed reverse">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuMjGl-nm4g2VpF8dIacmlMwyw8Yyjdfc1_eiG22BVng&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Turkish Angora</div>
+                <h2 class="padding">Graceful</h2>
+                <p class="padding">
+                    Elegant and athletic, Turkish
+                    Angoras are intelligent cats that
+                    love climbing and interacting with
+                    their families.
+                </p>
+            </div>
+        </section>
+
+        <!-- 15 -->
+
+        <section class="breed">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxCMNdxPd-OdHngLYXbzB_m6BrX39PEQmkGlNC2NGQfQ&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Devon Rex</div>
+                <h2>Curly Coat</h2>
+                <p>
+                    Devon Rex cats have large ears,
+                    wavy coats and playful personalities.
+                    They remain kitten-like throughout
+                    most of their lives.
+                </p>
+            </div>
+        </section>
+
+        <!-- 16 -->
+
+        <section class="breed reverse">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlwZf7tXkBJ4jaX3PgeGuytXlHOcypt5Xy8GcH-GsHrA&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Oriental Shorthair</div>
+                <h2 class="padding">Very Social</h2>
+                <p class="padding">
+                    With their slim bodies and huge ears,
+                    Oriental Shorthairs are energetic,
+                    vocal and deeply attached to their
+                    owners.
+                </p>
+            </div>
+        </section>
+
+        <!-- 17 -->
+
+        <section class="breed">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqM3MNpwJ4auPj-IazJyFF2kDdeIsztHm-lSUOV7oD3w&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Himalayan</div>
+                <h2 >Fluffy Beauty</h2>
+                <p>
+                    A mix between Persian and Siamese,
+                    Himalayans combine luxurious coats
+                    with striking blue eyes and gentle,
+                    affectionate personalities.
+                </p>
+            </div>
+        </section>
+
+        <!-- 18 -->
+
+        <section class="breed reverse">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgeIzVi8T8kLipF7A7d_2-eAgRML7uxgESOdX6EMigbA&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Bombay</div>
+                <h2 class="padding">Mini Panther</h2>
+                <p class="padding">
+                    Bombay cats have sleek jet-black
+                    coats and golden eyes. Their
+                    affectionate nature and panther-like
+                    appearance make them unforgettable.
+                </p>
+            </div>
+        </section>
+
+        <!-- 19 -->
+
+        <section class="breed">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb9CUVAW0ORjAAFqdzMBO-KJmh5Xbk7Z-kmw4hxElXQg&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Savannah</div>
+                <h2>Exotic Hybrid</h2>
+                <p>
+                    Savannah cats are tall, athletic
+                    hybrids known for their spotted
+                    coats, intelligence and incredible
+                    jumping ability.
+                </p>
+            </div>
+        </section>
+
+        <!-- 20 -->
+
+        <section class="breed reverse">
+            <div class="image-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3nzpoo4LzR-yciuzSgqQ8x3a8FILHlObgVo0Jf8nGEw&s=10" alt="">
+            </div>
+
+            <div class="content">
+                <div class="tag">Exotic Shorthair</div>
+                <h2 class="padding">Sweet & Calm</h2>
+                <p class="padding">
+                    Often called the short-haired
+                    Persian, Exotic Shorthairs have
+                    adorable round faces, plush coats
+                    and relaxed personalities that
+                    make them perfect lap cats.
+                </p>
+            </div>
+        </section>
         </div>
+
+        <section class="footer">
+            <h2>Every Cat  is Special 🐾</h2>
+
+            <p style="padding-left: 100px; padding-right: 100px;">
+                Whether you love giant fluffy companions,
+                energetic explorers or elegant lap cats,
+                there's a breed that's perfect for everyone.
+                Thanks for exploring the wonderfull world of cats!
+            </p>
+        </section>
+
+        <script>
+
+            const breeds = document.querySelectorAll(".breed");
+
+            const observer = new IntersectionObserver((entries)=>{
+
+                entries.forEach(entry=>{
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },{
+                threshold:0.2
+            });
+
+            breeds.forEach(breed=>{
+
+                observer.observe(breed);
+
+            });
+
+            </script>
     </body>
 </html> 
